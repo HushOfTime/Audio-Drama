@@ -1,1 +1,49 @@
-# Audio-Drama
+index.html
+<!DOCTYPE html>
+<html lang="zh">
+<head>
+<meta charset="UTF-8">
+<title>音频卡密系统</title>
+<style>
+body {
+    font-family: Arial;
+    text-align: center;
+    padding: 50px;
+    background: #f5f5f5;
+}
+input {
+    padding: 10px;
+    width: 200px;
+    font-size: 16px;
+}
+button {
+    padding: 10px 20px;
+    margin-left: 10px;
+    cursor: pointer;
+}
+#player {
+    margin-top: 30px;
+}
+</style>
+</head>
+<body>
+
+<h2>请输入卡密</h2>
+
+<input type="text" id="code" placeholder="输入卡密">
+<button onclick="checkCode()">确认</button>
+
+<div id="player"></div>
+
+<script>
+// ====== 在这里改你的卡密和音频链接 ======
+const data = {
+    "A123": "https://www.soundhelix.com/examples/mp3/SoundHelix-Song-1.mp3",
+    "B456": "https://www.soundhelix.com/examples/mp3/SoundHelix-Song-2.mp3",
+    "C789": "https://www.soundhelix.com/examples/mp3/SoundHelix-Song-3.mp3"
+};
+// =======================================
+
+function checkCode() {
+    const code = document.getElementById("code").value;
+    const player = document.getElementById("player");
