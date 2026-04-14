@@ -64,6 +64,19 @@ const data = {
 };
 // =======================================
 
-function checkCode() {
-    const code = document.getElementById("code").value;
-    const player = document.getElementById("player");
+    function checkCode() {
+        const code = document.getElementById("code").value;
+        const player = document.getElementById("player");
+    
+        player.innerHTML = "";
+        if (data[code].forEach((audio, index) => {
+            player.innerHTML += `
+                <p>第 $ {index + 1} 课</p>
+                <audio controls src="${audio}"></audio>
+            `;
+        });
+    } else {
+        player.innerHTML = "卡密错误";
+    }
+}
+</script>
